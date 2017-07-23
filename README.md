@@ -16,4 +16,8 @@ Web应用程序的核心是让任何用户都能够注册账户并能够使用�
 virtualenv		$pip install --user vitualenv  
 Django          $pip install Django  
 django-bootstrap3 $pip install django-bootstrap3
-
+Heroku Toolbelt ---- https://devcenter.heroku.com/articles/heroku-cli   
+dj-database-url(支持Django 与Heroku的数据库进行通信) (ll\_env)learning_log$pip install dj-database-url   
+dj-static（支持Django正确地管理静态文件） (ll\_env)learning_log$pip install dj-static   
+static3（支持Django正确地管理静态文件） (ll\_env)learning_log$pip install static3   
+gunicorn（服务器软件，能够在在线环境支持应用程序提供的服务） (ll\_env)learning_log$pip install gunicorn  
