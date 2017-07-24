@@ -25,7 +25,7 @@ SECRET_KEY = 'j+6l4d$pjp$#ty%=4w@cis0+$p!fh+5go#iy876$nn50*p337_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'learning_log/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # 我的设置
-LOGIN_URL = '/users/login'
+LOGIN_URL = '/users/login/'
 
 # django-bootstrap3设置
 BOOTSTRAP3 = {
@@ -144,8 +144,9 @@ if os.getcwd() == '/app':
     # 让request.is_secure()承认X-Forwarded-Proto头
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     
-    # 支持所有的主机头（host header）
-    ALLOWED_HOSTS = ['*']
+    # Only allow heroku to host the project.
+    ALLOWED_HOSTS = ['learning-log-final.herokuapp.com']
+    DEBUG = False
     
     # 静态资产配置
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
